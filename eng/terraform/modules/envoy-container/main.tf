@@ -2,6 +2,7 @@ locals {
   config_file_path = "/etc/proxy.yaml"
   envoy_config = templatefile("${path.module}/config.tmpl", {
     host_record = var.host_record
+    port        = var.port
   })
   echo_config_cmd = "echo '${local.envoy_config}' > ${local.config_file_path}"
   envoy_cmd       = "/usr/local/bin/envoy -c ${local.config_file_path}"

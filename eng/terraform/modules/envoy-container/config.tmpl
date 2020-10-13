@@ -4,7 +4,7 @@ static_resources:
   - address:
       socket_address:
         address: 0.0.0.0
-        port_value: 80
+        port_value: ${port}
     filter_chains:
     - filters:
       - name: envoy.filters.network.http_connection_manager
@@ -13,9 +13,9 @@ static_resources:
           stat_prefix: ingress_lbaci
           codec_type: AUTO
           route_config:
-            name: local_route
+            name: lb_route
             virtual_hosts:
-            - name: local_service
+            - name: lb_service
               domains: ["*"]
               routes:
               - match: { prefix: "/" }
@@ -36,4 +36,4 @@ static_resources:
             address:
               socket_address:
                 address: ${host_record}
-                port_value: 80
+                port_value: ${port}
