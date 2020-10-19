@@ -1,1 +1,2 @@
-# envoy-load-balance-aci
+# Load Balancing Azure Container Instances with Envoy
+This repository contains the scripts disscused in the article [Load Balancing Azure Container Instances with Envoy](https://medium.com/microsoftazure/load-balancing-azure-container-instances-with-envoy-4daf1f4c378c).
