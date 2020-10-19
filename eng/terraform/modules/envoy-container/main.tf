@@ -8,7 +8,7 @@ locals {
   envoy_cmd       = "/usr/local/bin/envoy -c ${local.config_file_path}"
 }
 
-# Create node container resource
+# Create envoy container resource
 resource "azurerm_container_group" "this" {
   name                = "aci-${var.deployment_name}"
   location            = var.location
